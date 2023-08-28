@@ -5,11 +5,11 @@ let aliensLine2 = []
 
 
 function preload(){
-    ship_0 = loadImage("ressources/ship_0.png");
-    ship_1 = loadImage("ressources/ship_1.png");
-    ship_2 = loadImage("ressources/ship_2.png");
-    alien_0 = loadImage("ressources/alien_0.png");
-    alien_1 = loadImage("ressources/alien_1.png");
+    ship_0 = loadImage("ressources/Ship0.png");
+    ship_1 = loadImage("ressources/Ship1.png");
+    ship_2 = loadImage("ressources/Ship2.png");
+    alien_0 = loadImage("ressources/Alien0.png");
+    alien_1 = loadImage("ressources/Alien1.png");
 
    
 }
@@ -19,15 +19,15 @@ let ship_0, ship_1, ship_2
 
 function setup() {
     
-    createCanvas(400, 400);
+    createCanvas(500, 500);
     background(0)
-    ship = new Ship(width/2-10,height-100);
+    ship = new Ship(width/2-25,height-100);
    
     ship.draw();
 
     for (let i=0; i<5; i++){
-        aliensLine1[i]=new Alien(90+50*i,20)
-        aliensLine2[i]=new Alien(90+50*i,70)
+        aliensLine1[i]=new Alien(90+70*i,130)
+        aliensLine2[i]=new Alien(60+50*i,70)
 
         
             
@@ -91,10 +91,10 @@ class Alien{
     draw(){
         if (this.alive) {
             if (this.alienStage == 0){
-                image(alien_0,this.x,this.y);         
+                image(alien_0,this.x,this.y,60,60);         
             }
             else {
-                image(alien_1,this.x,this.y);
+                image(alien_1,this.x,this.y,55,55);
             // this.changeStage++            
             }           
             if (this.changeStage==0){
